@@ -4,6 +4,7 @@
 <%
 request.setCharacterEncoding("UTF-8");
 %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,6 +15,7 @@ request.setCharacterEncoding("UTF-8");
 	<%
 String id = request.getParameter("id");
 String name = request.getParameter("name");
+String salary = request.getParameter("salary");
 String sessionID = "yes";
 
 try{
@@ -42,6 +44,8 @@ if (id == "") {
 	rs.next();
 	
 	String logid = rs.getString("id");
+	String logname= rs.getString("name");
+	String logsal = rs.getString("salary");
 
 	if (!id.equals(logid)){
 %>
@@ -52,7 +56,10 @@ if (id == "") {
 	<%
 		} else {
 			session.setAttribute("user",sessionID);
-			response.sendRedirect("salary_output.jsp");
+	%>
+	<%=logname%> 직원님의 월급은<br><br>
+	<%=logsal%> 만 원 입니다.
+	<%		
 		}
 	}	
 
