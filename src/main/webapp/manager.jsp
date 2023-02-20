@@ -36,7 +36,7 @@ request.setCharacterEncoding("UTF-8");
 	<%=rs.getString("status")%><br><br>
 
 	월급:
-	<%=rs.getString("salary")%><br><br>
+	<%=rs.getString("salary")%> 만 원<br><br>
 	--------------------------------------------
 
 	<%
